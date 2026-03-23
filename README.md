@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Bulked: Landing Page
 
-TODO: Document your project here
+...
