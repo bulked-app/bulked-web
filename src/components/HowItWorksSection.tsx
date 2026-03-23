@@ -1,20 +1,23 @@
 import ScrollReveal from "@/components/ScrollReveal";
-
-const steps = [
-  { num: "01", title: "Choose your gym", desc: "Search or select the gym you're training at today." },
-  { num: "02", title: "Log exercises", desc: "Pick exercises, select equipment, and record your sets." },
-  { num: "03", title: "Track progress", desc: "Watch your strength and volume grow over time." },
-  { num: "04", title: "Improve performance", desc: "Use insights to optimize your training splits." },
-];
+import { useI18n } from "@/lib/i18n";
 
 const HowItWorksSection = () => {
+  const { t } = useI18n();
+
+  const steps = [
+    { num: "01", title: t("how_1_title"), desc: t("how_1_desc") },
+    { num: "02", title: t("how_2_title"), desc: t("how_2_desc") },
+    { num: "03", title: t("how_3_title"), desc: t("how_3_desc") },
+    { num: "04", title: t("how_4_title"), desc: t("how_4_desc") },
+  ];
+
   return (
     <section id="how-it-works" className="py-24 lg:py-32 bg-card/50">
       <div className="container mx-auto section-padding">
         <ScrollReveal className="text-center mb-16 lg:mb-20">
-          <span className="text-xs font-semibold tracking-widest uppercase text-primary">How it works</span>
+          <span className="text-xs font-semibold tracking-widest uppercase text-primary">{t("how_badge")}</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-4 text-balance leading-[1.1]">
-            From gym door to gains
+            {t("how_title")}
           </h2>
         </ScrollReveal>
 

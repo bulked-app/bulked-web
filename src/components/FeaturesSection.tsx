@@ -1,50 +1,28 @@
 import ScrollReveal from "@/components/ScrollReveal";
-import { Dumbbell, MapPin, Cpu, TrendingUp, Search, Building2 } from "lucide-react";
-
-const features = [
-  {
-    icon: Dumbbell,
-    title: "Smart Workout Tracking",
-    desc: "Log sets, reps, weight, rest time, and notes — all in a few taps.",
-  },
-  {
-    icon: MapPin,
-    title: "Gym-Based History",
-    desc: "Every workout is tied to a real location. Know exactly where you trained.",
-  },
-  {
-    icon: Cpu,
-    title: "Equipment-Aware Logging",
-    desc: "Select the exact machine you used. No more guessing between cable brands.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Progress Analytics",
-    desc: "Visualize strength gains, volume trends, and personal records over time.",
-  },
-  {
-    icon: Search,
-    title: "Discover Gyms",
-    desc: "Find gyms with the specific equipment you need, wherever you are.",
-  },
-  {
-    icon: Building2,
-    title: "Gym Owner Dashboard",
-    desc: "Manage your gym profile, equipment catalog, and attract new members.",
-  },
-];
+import { Dumbbell, MapPin, Cpu, TrendingUp, Search } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 const FeaturesSection = () => {
+  const { t } = useI18n();
+
+  const features = [
+    { icon: Dumbbell, title: t("feat_1_title"), desc: t("feat_1_desc") },
+    { icon: MapPin, title: t("feat_2_title"), desc: t("feat_2_desc") },
+    { icon: Cpu, title: t("feat_3_title"), desc: t("feat_3_desc") },
+    { icon: TrendingUp, title: t("feat_4_title"), desc: t("feat_4_desc") },
+    { icon: Search, title: t("feat_5_title"), desc: t("feat_5_desc") },
+  ];
+
   return (
     <section id="features" className="py-24 lg:py-32">
       <div className="container mx-auto section-padding">
         <ScrollReveal className="text-center mb-16 lg:mb-20">
-          <span className="text-xs font-semibold tracking-widest uppercase text-primary">Features</span>
+          <span className="text-xs font-semibold tracking-widest uppercase text-primary">{t("feat_badge")}</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-4 text-balance leading-[1.1]">
-            Everything you need to level up
+            {t("feat_title")}
           </h2>
           <p className="text-muted-foreground mt-4 max-w-lg mx-auto text-pretty">
-            Built for lifters who care about data, precision, and knowing their gym inside out.
+            {t("feat_desc")}
           </p>
         </ScrollReveal>
 
