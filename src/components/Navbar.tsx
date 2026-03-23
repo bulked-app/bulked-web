@@ -31,12 +31,10 @@ const Navbar = ({ isOwnerPage = false }: NavbarProps) => {
             <>
               <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("nav_features")}</a>
               <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("nav_how")}</a>
-              <a href="#screenshots" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("nav_app")}</a>
-              <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("nav_testimonials")}</a>
-              <Link to="/owners" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("nav_owners")}</Link>
             </>
           )}
           <LanguageToggle />
+          <Button variant="outline" size="sm">{isOwnerPage ? t("owners_hero_cta") : t("nav_owners")}</Button>
           <Button variant="hero" size="sm">{isOwnerPage ? t("owners_hero_cta") : t("nav_join")}</Button>
         </div>
 
