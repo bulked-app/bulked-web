@@ -6,41 +6,45 @@
 
 @layer base {
   :root {
-    --background: 40 20% 97%;
-    --foreground: 220 14% 10%;
+  --background: 0 0% 97%;
+  --foreground: 220 14% 10%;
 
-    --card: 40 15% 94%;
-    --card-foreground: 220 14% 10%;
+  --card: 0 0% 94%;
+  --card-foreground: 220 14% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 14% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 14% 10%;
 
-    --primary: 38 92% 50%;
-    --primary-foreground: 0 0% 100%;
+  /* changed from yellow */
+  --primary: 220 6% 45%;
+  --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 10% 92%;
-    --secondary-foreground: 220 14% 25%;
+  --secondary: 220 10% 92%;
+  --secondary-foreground: 220 14% 25%;
 
-    --muted: 220 10% 92%;
-    --muted-foreground: 220 8% 46%;
+  --muted: 220 10% 92%;
+  --muted-foreground: 220 8% 46%;
 
-    --accent: 38 92% 50%;
-    --accent-foreground: 0 0% 100%;
+  /* changed from yellow */
+  --accent: 220 6% 45%;
+  --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
 
-    --border: 220 10% 88%;
-    --input: 220 10% 88%;
-    --ring: 38 92% 50%;
+  --border: 220 10% 88%;
+  --input: 220 10% 88%;
 
-    --radius: 0.75rem;
+  /* changed from yellow */
+  --ring: 220 6% 45%;
 
-    --hero-gradient-start: 38 92% 50%;
-    --hero-gradient-end: 25 95% 53%;
-    --surface-elevated: 0 0% 100%;
-    --text-dim: 220 8% 55%;
-  }
+  --radius: 0.75rem;
+
+  --hero-gradient-start: 0 0% 60%;
+  --hero-gradient-end: 0 0% 40%;
+  --surface-elevated: 0 0% 100%;
+  --text-dim: 220 8% 55%;
+}
 }
 
 @layer base {

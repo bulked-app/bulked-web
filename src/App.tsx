@@ -6,7 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { I18nProvider } from "@/lib/i18n";
 import Index from "./pages/Index.tsx";
 import Owners from "./pages/Owners.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import NotFound from "./pages/not-found.tsx";
+import DeleteAccount from "./pages/delete-account.tsx";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +21,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/owners" element={<Owners />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/delete-account" element={<DeleteAccount />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
