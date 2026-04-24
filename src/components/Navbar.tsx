@@ -34,7 +34,11 @@ const Navbar = ({ isOwnerPage = false }: NavbarProps) => {
             </>
           )}
           <LanguageToggle />
-          <Button variant="outline" size="sm">{isOwnerPage ? t("owners_hero_cta") : t("nav_owners")}</Button>
+          <Button asChild variant="outline" size="sm">
+            <Link to={isOwnerPage ? "/" : "/owners"}>
+              {isOwnerPage ? t("owners_hero_cta") : t("nav_owners")}
+            </Link>
+          </Button>
           <Button variant="hero" size="sm">{isOwnerPage ? t("owners_hero_cta") : t("nav_join")}</Button>
         </div>
 
