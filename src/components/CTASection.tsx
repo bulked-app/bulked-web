@@ -8,25 +8,25 @@ const CTASection = () => {
   const { t } = useI18n();
 
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background pointer-events-none" />
+    <section id="cta" className="relative overflow-hidden py-24 lg:py-32">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.16),transparent_38%)]" />
       <div className="container mx-auto section-padding relative">
-        <ScrollReveal className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-balance leading-[1.1]">
-            {t("cta_title_1")}<span className="gradient-text">{t("cta_title_2")}</span>
+        <ScrollReveal className="surface-panel mx-auto max-w-4xl rounded-lg px-6 py-12 text-center sm:px-10">
+          <h2 className="text-balance text-3xl font-extrabold leading-[1.04] sm:text-4xl lg:text-5xl">
+            {t("landing_cta_title")}
           </h2>
-          <p className="text-muted-foreground mt-4 text-lg text-pretty">
-            {t("cta_desc")}
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">
+            {t("landing_cta_desc")}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-            <Button variant="hero" size="lg" className="gap-2">
-              {t("cta_btn")} <ArrowRight size={18} />
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <Button asChild variant="hero" size="lg" className="gap-2">
+              <a href="#access">
+                {t("landing_cta_primary")} <ArrowRight size={18} />
+              </a>
             </Button>
-            <Link to="/owners">
-              <Button variant="hero-outline" size="lg">
-                {t("nav_owners")}
-              </Button>
-            </Link>
+            <Button asChild variant="hero-outline" size="lg">
+              <Link to="/owners">{t("landing_cta_secondary")}</Link>
+            </Button>
           </div>
         </ScrollReveal>
       </div>
