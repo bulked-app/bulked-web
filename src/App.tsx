@@ -4,8 +4,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { I18nProvider } from "@/lib/i18n";
-import Index from "./pages/Index.tsx";
-import Owners from "./pages/Owners.tsx";
+import Index from "./pages/index.tsx";
+import Owners from "./pages/owners.tsx";
 import NotFound from "./pages/not-found.tsx";
 import DeleteAccount from "./pages/delete-account.tsx";
 

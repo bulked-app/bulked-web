@@ -1,41 +1,53 @@
 import ScrollReveal from "@/components/ScrollReveal";
-import { Dumbbell, MapPin, Cpu, TrendingUp, Search } from "lucide-react";
-import { useI18n } from "@/lib/i18n";
+import {
+  BarChart3,
+  Compass,
+  Dumbbell,
+  MapPinned,
+  ShieldCheck,
+  TimerReset,
+} from "lucide-react";
+import { type TranslationKey, useI18n } from "@/lib/i18n";
+
+const CARDS: {
+  icon: typeof Dumbbell;
+  titleKey: TranslationKey;
+  descKey: TranslationKey;
+}[] = [
+  { icon: Dumbbell, titleKey: "product_card_1_title", descKey: "product_card_1_desc" },
+  { icon: MapPinned, titleKey: "product_card_2_title", descKey: "product_card_2_desc" },
+  { icon: BarChart3, titleKey: "product_card_3_title", descKey: "product_card_3_desc" },
+  { icon: Compass, titleKey: "product_card_4_title", descKey: "product_card_4_desc" },
+  { icon: TimerReset, titleKey: "product_card_5_title", descKey: "product_card_5_desc" },
+  { icon: ShieldCheck, titleKey: "product_card_6_title", descKey: "product_card_6_desc" },
+];
 
 const FeaturesSection = () => {
   const { t } = useI18n();
 
-  const features = [
-    { icon: Dumbbell, title: t("feat_1_title"), desc: t("feat_1_desc") },
-    { icon: MapPin, title: t("feat_2_title"), desc: t("feat_2_desc") },
-    { icon: Cpu, title: t("feat_3_title"), desc: t("feat_3_desc") },
-    { icon: TrendingUp, title: t("feat_4_title"), desc: t("feat_4_desc") },
-    { icon: Search, title: t("feat_5_title"), desc: t("feat_5_desc") },
-  ];
-
   return (
     <section id="features" className="py-24 lg:py-32">
       <div className="container mx-auto section-padding">
-        <ScrollReveal className="text-center mb-16 lg:mb-20">
-          <span className="text-xs font-semibold tracking-widest uppercase text-primary">{t("feat_badge")}</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-4 text-balance leading-[1.1]">
-            {t("feat_title")}
+        <ScrollReveal className="mx-auto max-w-3xl text-center">
+          <span className="eyebrow-pill">{t("product_badge")}</span>
+          <h2 className="mt-5 text-balance text-3xl font-extrabold leading-[1.04] sm:text-4xl lg:text-5xl">
+            {t("product_title")}
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-lg mx-auto text-pretty">
-            {t("feat_desc")}
+          <p className="mx-auto mt-4 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
+            {t("product_desc")}
           </p>
         </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((f, i) => (
-            <ScrollReveal key={f.title} delay={i * 80}>
-              <div className="glass-card rounded-xl p-6 h-full hover:border-primary/30 transition-colors duration-300 group">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <f.icon size={20} className="text-primary" />
+        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {CARDS.map((card, index) => (
+            <ScrollReveal key={card.titleKey} delay={index * 70}>
+              <article className="glass-card h-full rounded-lg p-6">
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-primary/20 bg-primary/10 text-primary">
+                  <card.icon size={20} />
                 </div>
-                <h3 className="text-lg font-bold mb-2">{f.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-              </div>
+                <h3 className="mt-5 text-xl font-semibold">{t(card.titleKey)}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">{t(card.descKey)}</p>
+              </article>
             </ScrollReveal>
           ))}
         </div>

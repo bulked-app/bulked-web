@@ -1,0 +1,1 @@
+export const WAITLIST_URL = "https://waitlister.me/p/bulked";

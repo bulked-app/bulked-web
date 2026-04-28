@@ -153,7 +153,7 @@ const OwnersPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section id="owners-cta" className="py-24 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background pointer-events-none" />
         <div className="container mx-auto section-padding relative">
           <ScrollReveal className="text-center max-w-2xl mx-auto">
